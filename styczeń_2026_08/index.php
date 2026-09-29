@@ -32,8 +32,16 @@ $polaczenie = mysqli_connect("localhost", "root", "", "korona");
         ?>
     </section>
     <div id="kfooter">
-        <header id="stopka1"></header>
-        <header id="stopka2"></header>
+        <header id="stopka1">
+            <h3>Kontakt</h3>
+            <ul>
+                <li>Zadzwoń do nas: 111 222 333</li>
+                <li><a href="mail:korona@gory.pl">Napisz do nas</a></li>
+            </ul>
+        </header>
+        <header id="stopka2">
+            <h3>&copy; Wykonane przez: PESEL ZDAJĄCEGO</h3>
+        </header>
     </div>
 </body>
 <?php 
