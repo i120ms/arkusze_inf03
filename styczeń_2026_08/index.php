@@ -24,6 +24,10 @@ $polaczenie = mysqli_connect("localhost", "root", "", "korona");
         <?php
         if($polaczenie){
             $zapytanie2="SELECT nazwa, plik FROM szczyty LIMIT 10;";
+            $wynik2 = mysqli_query($polaczenie, $zapytanie2);
+            while($wiersz = mysqli_fetch_row($wynik2)){
+                echo '<img src="$wiersz[0]" alt="$wiersz[1]" class="miniatury">';
+            }
         }
         ?>
     </section>
