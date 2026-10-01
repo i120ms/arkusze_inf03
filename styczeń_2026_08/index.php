@@ -19,14 +19,22 @@ $polaczenie = mysqli_connect("localhost", "root", "", "korona");
             <h1>Korona Gór Polskich</h1>
         </header>
     </div>
-    <main></main>
+    <main>
+        <?php
+            $zapytanie1 = "SELECT id, nazwa FROM szczyty ORDER BY wysokosc DESC;";
+            $wynik1 = mysqli_query($polaczenie, $zapytanie1);
+            while($wiersz = mysqli_fetch_assoc($wynik1)){
+                echo "<span><a href='szczyty.php?id={$wiersz['id']}'>{$wiersz['nazwa']}</a></span> ";
+            }
+        ?>
+    </main>
     <section>
         <?php
         if($polaczenie){
             $zapytanie2="SELECT nazwa, plik FROM szczyty LIMIT 10;";
             $wynik2 = mysqli_query($polaczenie, $zapytanie2);
             while($wiersz = mysqli_fetch_row($wynik2)){
-                echo '<img src="$wiersz[0]" alt="$wiersz[1]" class="miniatury">';
+                echo "<img src='$wiersz[1]' alt='$wiersz[0]' class='miniatury'>";
             }
         }
         ?>
