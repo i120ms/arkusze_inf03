@@ -21,23 +21,22 @@ $polaczenie = mysqli_connect("localhost", "root", "", "korona");
     </div>
     <main>
         <?php
-            $zapytanie1 = "SELECT id, nazwa FROM szczyty ORDER BY wysokosc DESC;";
-            $wynik1 = mysqli_query($polaczenie, $zapytanie1);
-            while($wiersz = mysqli_fetch_assoc($wynik1)){
-                echo "<span><a href='szczyty.php?id={$wiersz['id']}'>{$wiersz['nazwa']}</a></span> ";
-            }
-        ?>
-    </main>
-    <section>
-        <?php
-        if($polaczenie){
-            $zapytanie2 = "SELECT nazwa, plik FROM szczyty LIMIT 10;";
-            $wynik2 = mysqli_query($polaczenie, $zapytanie2);
-            while($wiersz = mysqli_fetch_row($wynik2)){
-                echo "<img src='$wiersz[1]' alt='$wiersz[0]' class='miniatury'>";
+        if(isset($_GET['id'])){
+            $id = $_GET['id'];
+            $zapytanie3 = "SELECT szczyty.plik, szczyty.nazwa, szczyty.wysokosc, szczyty.pasmo, opis.opis FROM szczyty JOIN opis ON szczyty.id = opis.szczyty_id WHERE szczyty.id = 1;";
+            $wynik3 = mysqli_query($polaczenie, $zapytanie3);
+            while($wiersz = mysqli_fetch_assoc($wynik3)){
+                echo "<img src='{$wiersz['plik']}' alt='{$wiersz['nazwa']}' class='duze'>";
+                echo "<h2>{$wiersz['nazwa']}</h2>";
+                echo "<h3>wysokość: {$wiersz['wysokosc']} m n.p.m.</h3>";
+                echo "<h3>pasmo górskie: {$wiersz['pasmo']}</h3>";
+                echo "<p>{$wiersz['opis']}</p>";
             }
         }
         ?>
+    </main>
+    <section>
+        
     </section>
     <div id="kfooter">
         <header id="stopka1">
