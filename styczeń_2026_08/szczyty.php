@@ -1,5 +1,6 @@
 <?php
 $polaczenie = mysqli_connect("localhost", "root", "", "korona");
+mysqli_set_charset($polaczenie, "utf8");
 ?>
 
 <!DOCTYPE html>
@@ -23,12 +24,12 @@ $polaczenie = mysqli_connect("localhost", "root", "", "korona");
         <?php
         if(isset($_GET['id'])){
             $id = $_GET['id'];
-            $zapytanie3 = "SELECT szczyty.plik, szczyty.nazwa, szczyty.wysokosc, szczyty.pasmo, opis.opis FROM szczyty JOIN opis ON szczyty.id = opis.szczyty_id WHERE szczyty.id = 1;";
+            $zapytanie3 = "SELECT szczyty.plik, szczyty.nazwa, szczyty.wysokosc, szczyty.pasmo, opis.opis FROM szczyty JOIN opis ON szczyty.id = opis.szczyty_id WHERE szczyty.id = $id;";
             $wynik3 = mysqli_query($polaczenie, $zapytanie3);
             while($wiersz = mysqli_fetch_assoc($wynik3)){
-                echo "<img src='{$wiersz['plik']}' alt='{$wiersz['nazwa']}' class='duze'>";
+                echo "<img src='{$wiersz['plik']}' alt='{$wiersz['nazwa']}'>";
                 echo "<h2>{$wiersz['nazwa']}</h2>";
-                echo "<h3>wysokość: {$wiersz['wysokosc']} m n.p.m.</h3>";
+                echo "<h3>wysokość: {$wiersz['wysokosc']} metrów n.p.m.</h3>";
                 echo "<h3>pasmo górskie: {$wiersz['pasmo']}</h3>";
                 echo "<p>{$wiersz['opis']}</p>";
             }

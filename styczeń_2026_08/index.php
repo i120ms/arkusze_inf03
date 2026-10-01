@@ -1,5 +1,6 @@
 <?php
 $polaczenie = mysqli_connect("localhost", "root", "", "korona");
+mysqli_set_charset($polaczenie, "utf8");
 ?>
 
 <!DOCTYPE html>
