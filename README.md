@@ -5,6 +5,6 @@
 
 <font face = "Verdana">
         <p align = "right">
-            i120ms <sub>2026</sub>
+            120ms <sub>2026</sub>
         </p>
 </font>
