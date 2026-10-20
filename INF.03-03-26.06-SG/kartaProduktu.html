@@ -5,6 +5,7 @@
     <title>Fotel</title>
     <link rel="stylesheet" href="styl.css">
 </head>
+
 <body>
     <header>
         <h1>Sklep meblowy</h1>
@@ -12,25 +13,29 @@
     </header>
     <main>
         <section>
-            <img src="fotel1.png" alt="fotel" class="obraz" id="mainImage">
+            <img src="img/fotel1.png" alt="fotel" class="obraz" onclick="otworzOkno()">
             <br>
-            <img src="fotel1.png" alt="miniatura" class="miniatury">
-            <img src="fotel2.png" alt="miniatura" class="miniatury">
-            <img src="fotel3.png" alt="miniatura" class="miniatury">
-            <div class="okno" id="popup">
-                <span class="zamknij">&times;</span>
-                <img class="obrazOkno" id="popupImage" alt="powiększony fotel">
+            <img src="img/fotel1.png" alt="miniatura" class="miniatura" onclick="podmienObraz('fotel1.png')">
+            <img src="img/fotel2.png" alt="miniatura" class="miniatura" onclick="podmienObraz('fotel2.png')">
+            <img src="img/fotel3.png" alt="miniatura" class="miniatura" onclick="podmienObraz('fotel3.png')">
+            <div class="okno">
+                <span class="zamknij" onclick="zamknijOkno()">&times;</span>
+                <img src="" class="obrazOkno">
             </div>
         </section>
         <article>
-            <h2>Żółty Fotel</h2>
-            <p>Nasz żółty fotel może być przygotowany w trzech wariantach, które można przeglądać na grafikach. Jest wygodny i elegancki. Wariant 1 polecamy do wnętrz klasycznych. Wariant 3 jest utrzymany w stylu glamour, a guzik na środku oparcia jest wykonany z kryształka. Wygodne podłokietniki sprawiają, że w tym fotelu naprawdę się odpoczywa. Wykonany z elastycznej pianki - materiału, który wyróżnia się plastycznością oraz sprężystością, zapewniając komfort siedzenia.</p>
+            <h2>Żółty fotel</h2>
+            <p>Nasz żółty fotel może być przygotowany w trzech wariantach, które można przeglądać na grafikach. Jest
+                wygodny i elegancki. Wariant 1 polecamy do wnętrz klasycznych. Wariant 3 jest utrzymany w stylu glamour,
+                a guzik na środku oparcia jest wykonany z kryształka. Wygodne podłokietniki sprawiają, że w tym fotelu
+                naprawdę się odpoczywa. Wykonany z elastycznej pianki - materiału, który wyróżnia się plastycznością
+                oraz sprężystością, zapewniając komfort siedzenia.</p>
             <p>Zorganizujemy dla Ciebie bezpłatną dostawę oraz wniesiemy towar.</p>
-            <label for="variant"><strong>Wybierz wariant fotela</strong></label>
-            <select id="variant" name="variant">
-                <option>wariant 1</option>
-                <option>wariant 2</option>
-                <option>wariant 3</option>
+            <strong>Wybierz wariant fotela</strong>
+            <select name="wariant" id="wariant">
+                <option value="fotel1">wariant 1</option>
+                <option value="fotel2">wariant 2</option>
+                <option value="fotel3">wariant 3</option>
             </select>
             <p><button type="button">KUP TERAZ</button></p>
             <p><a href="sklep.html">Do strony głównej</a></p>
@@ -38,37 +43,9 @@
     </main>
     <footer>
         <hr>
-        <p>Autor strony: <em>Bartosz Bryniarski</em></p>
+        <p>Autor strony: <em>xxxxxxxxx</em></p>
     </footer>
-    <script>
-        function changeImage(thumbnail) {
-            document.getElementById("mainImage").src = thumbnail.src;
-        }
-        function openPopup() {
-            document.getElementById("popup").style.display = "block";
-            document.getElementById("popupImage").src = document.getElementById("mainImage").src;
-        }
-        function closePopup() {
-            document.getElementById("popup").style.display = "none";
-        }
-        var thumbnails = document.querySelectorAll(".miniatury");
-        for (var i = 0; i < thumbnails.length; i++) {
-            thumbnails[i].addEventListener("click", function () {
-                changeImage(this);
-            });
-        }
-        document.getElementById("mainImage").addEventListener("click", openPopup);
-        document.querySelector(".zamknij").addEventListener("click", closePopup);
-        document.addEventListener("keydown", function (event) {
-            if (event.key === "Escape") {
-                closePopup();
-            }
-        });
-        document.getElementById("popup").addEventListener("click", function (event) {
-            if (event.target === this) {
-                closePopup();
-            }
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
+
 </html>
