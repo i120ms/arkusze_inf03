@@ -14,9 +14,14 @@
         <section><img src="logo.png" alt="logo"></section>
     </header>
     <main>
+<!-- 
+Dodatkowo zrób (nie związane z arkuszem):
+- okienko confirm związane z usunięciem zdjęcia z galerii - True/False (element.remove();)
+- zrób to w formie title - "twoje zamówienia"
+-->
         <section>
-            <h4>Twoje zamówienie</h4>
-            <ul></ul>
+            <h4 title="kliknij aby usunąć" onclick="wyczyscZamowienie()">Twoje zamówienie</h4>
+            <ul id="zamowienie"></ul>
             <button type="button" onclick="wyczyscZamowienie()">Wyczyść</button>
             <button type="button" onclick="zatwierdzZamowienie()">Zatwierdź</button>
         </section>
@@ -47,23 +52,6 @@
             </div>
         </section>
     </main>
-
-<!-- 
-Dodatkowo zrób (nie związane z arkuszem):
-- okienko confirm związane z usunięciem zdjęcia z galerii - True/False (element.remove();)
--->
-
-    <section class="galeria">
-        <h4>Galeria (kliknij zdjęcie, aby je usunąć)</h4>
-        <img src="nalesniki.webp" alt="Naleśniki" width="150" onclick="usun(this)">
-        <img src="lasagne.webp" alt="Lasagne szpinakowa" width="150" onclick="usun(this)">
-        <img src="marchewka.webp" alt="Pieczona marchewka" width="150" onclick="usun(this)">
-        <img src="rosol.webp" alt="Wege rosół" width="150" onclick="usun(this)">
-        <img src="tarta.webp" alt="Tarta szparagowa" width="150" onclick="usun(this)">
-        <img src="kompot.webp" alt="Kompot" width="150" onclick="usun(this)">
-    </section>
-
-
     <footer>
         <p>Wykonał: xxxxxxxxxxxxx</p>
     </footer>
