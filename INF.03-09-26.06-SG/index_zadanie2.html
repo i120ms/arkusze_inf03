@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Restauracja Marchewka</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <header>
+        <section>
+            <h1>Restauracja Marchewka</h1>
+            <h3>Twoje wegetariańskie miejsce na mapie miasta</h3>
+        </section>
+        <section><img src="logo.png" alt="logo"></section>
+    </header>
+    <main>
+        <section>
+            <h4>Twoje zamówienie</h4>
+            <ul></ul>
+            <button type="button" onclick="wyczyscZamowienie()">Wyczyść</button>
+            <button type="button" onclick="zatwierdzZamowienie()">Zatwierdź</button>
+        </section>
+        <section>
+            <div class="potrawa" onclick="dodaj('Naleśniki')">
+                <img src="nalesniki.webp" alt="Naleśniki"><br>
+                <p>Naleśniki</p>
+            </div>
+            <div class="potrawa" onclick="dodaj('Lasagne szpinakowa')">
+                <img src="lasagne.webp" alt="Lasagne szpinakowa"><br>
+                <p>Lasagne szpinakowa</p>
+            </div>
+            <div class="potrawa" onclick="dodaj('Pieczona marchewka')">
+                <img src="marchewka.webp" alt="Pieczona marchewka"><br>
+                <p>Pieczona marchewka</p>
+            </div>
+            <div class="potrawa" onclick="dodaj('Wege rosół')">
+                <img src="rosol.webp" alt="Wege rosół"><br>
+                <p>Wege rosół</p>
+            </div>
+            <div class="potrawa" onclick="dodaj('Tarta szparagowa')">
+                <img src="tarta.webp" alt="Tarta szparagowa"><br>
+                <p>Tarta szparagowa</p>
+            </div>
+            <div class="potrawa" onclick="dodaj('Kompot')">
+                <img src="kompot.webp" alt="Kompot"><br>
+                <p>Kompot</p>
+            </div>
+        </section>
+    </main>
+
+<!-- 
+Dodatkowo zrób (nie związane z arkuszem):
+- okienko confirm związane z usunięciem zdjęcia z galerii - True/False (element.remove();)
+-->
+
+    <section class="galeria">
+        <h4>Galeria (kliknij zdjęcie, aby je usunąć)</h4>
+        <img src="nalesniki.webp" alt="Naleśniki" width="150" onclick="usun(this)">
+        <img src="lasagne.webp" alt="Lasagne szpinakowa" width="150" onclick="usun(this)">
+        <img src="marchewka.webp" alt="Pieczona marchewka" width="150" onclick="usun(this)">
+        <img src="rosol.webp" alt="Wege rosół" width="150" onclick="usun(this)">
+        <img src="tarta.webp" alt="Tarta szparagowa" width="150" onclick="usun(this)">
+        <img src="kompot.webp" alt="Kompot" width="150" onclick="usun(this)">
+    </section>
+
+
+    <footer>
+        <p>Wykonał: xxxxxxxxxxxxx</p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
