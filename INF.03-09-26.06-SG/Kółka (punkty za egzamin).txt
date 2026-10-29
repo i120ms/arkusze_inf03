@@ -1,6 +1,6 @@
 Kółka (punkty za egzamin)
 
-R2
+R2 - html
 3
 3
 4
@@ -10,12 +10,12 @@ R2
 4
 4
 
-R3
+R3 - html, css
 4
 4
 4
 
-R4
+R4 - css
 2
 2
 2
@@ -26,3 +26,13 @@ R4
 2
 2
 2
+
+R5 - js
+1
+2
+4
+3
+4
+3
+3
+
