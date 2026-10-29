@@ -1,5 +1,7 @@
 Kółka (punkty za egzamin)
 
+R1 - sql
+
 R2 - html
 3
 3
